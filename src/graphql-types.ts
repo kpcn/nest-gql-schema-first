@@ -35,6 +35,7 @@ export abstract class IQuery {
 export abstract class IMutation {
     createCoffee?: Coffee;
     updateCoffee?: Coffee;
+    removeCoffee?: Coffee;
 }
 
 type Nullable<T> = T | null;

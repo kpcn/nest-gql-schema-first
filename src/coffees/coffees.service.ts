@@ -44,4 +44,9 @@ export class CoffeesService {
     }
     return this.coffeeRepository.save(coffee);
   }
+
+  async remove(id: number): Promise<Coffee> {
+    const coffee = await this.coffeeRepository.findOne({ where: { id } });
+    return this.coffeeRepository.remove(coffee);
+  }
 }

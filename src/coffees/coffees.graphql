@@ -37,4 +37,5 @@ type Query {
 type Mutation {
   createCoffee(createCoffeeInput: CreateCoffeeInput!): Coffee!
   updateCoffee(id: ID!, updateCoffeeInput: UpdateCoffeeInput!): Coffee!
+  removeCoffee(id: ID!): Coffee!
 }
