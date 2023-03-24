@@ -46,7 +46,7 @@ export class CoffeesService {
   }
 
   async remove(id: number): Promise<Coffee> {
-    const coffee = await this.coffeeRepository.findOne({ where: { id } });
+    const coffee = await this.findOne(id);
     return this.coffeeRepository.remove(coffee);
   }
 }

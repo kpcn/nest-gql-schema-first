@@ -36,7 +36,7 @@ export class CoffeesResolver {
     return this.coffeesService.update(id, updateCoffeeInput);
   }
 
-  @Mutation('deleteCoffee')
+  @Mutation('removeCoffee')
   async remove(
     @Args('id', ParseIntPipe) id: number,
   ): Promise<GraphQLTypes.Coffee> {
