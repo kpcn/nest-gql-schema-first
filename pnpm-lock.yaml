@@ -20,6 +20,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.0.0
   class-transformer: ^0.5.1
   class-validator: ^0.14.0
+  dataloader: ^2.2.2
   eslint: ^8.0.1
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^4.0.0
@@ -51,6 +52,7 @@ dependencies:
   '@nestjs/typeorm': 9.0.1_sjj62jftk2vjv2p2q3xb4thbfm
   class-transformer: 0.5.1
   class-validator: 0.14.0
+  dataloader: 2.2.2
   graphql: 16.6.0
   graphql-subscriptions: 2.0.0_graphql@16.6.0
   pg: 8.10.0
@@ -2629,6 +2631,10 @@ packages:
 
   /cssfilter/0.0.10:
     resolution: {integrity: sha512-FAaLDaplstoRsDR8XGYH51znUN0UY7nMc6Z9/fvE8EXGwvJE9hu7W2vHwx1+bd6gCYnln9nLbzxFTrcO9YQDZw==}
+    dev: false
+
+  /dataloader/2.2.2:
+    resolution: {integrity: sha512-8YnDaaf7N3k/q5HnTJVuzSyLETjoZjVmHc4AeKAzOvKHEFQKcn64OKBfzHYtE9zGjctNM7V9I0MfnUVLpi7M5g==}
     dev: false
 
   /date-fns/2.29.3:
