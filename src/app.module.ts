@@ -9,6 +9,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { DateScalar } from './common/scalars/date.scalar';
 import { DrinksResolver } from './drinks/drinks.resolver';
+import { PubSubModule } from './pub-sub/pub-sub.module';
 
 @Module({
   imports: [
@@ -26,8 +27,10 @@ import { DrinksResolver } from './drinks/drinks.resolver';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       typePaths: ['./**/*.graphql'],
+      installSubscriptionHandlers: true,
     }),
     CoffeesModule,
+    PubSubModule,
   ],
   controllers: [AppController],
   providers: [AppService, DateScalar, DrinksResolver],
