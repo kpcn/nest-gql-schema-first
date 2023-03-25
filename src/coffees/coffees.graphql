@@ -1,9 +1,22 @@
 scalar Date
 
+interface Drink {
+  name: String!
+}
+
+type Tea implements Drink {
+  name: String!
+}
+
+enum CoffeeType {
+  ARABICA
+  ROBUSTA
+}
+
 """
 Coffee model
 """
-type Coffee {
+type Coffee implements Drink {
   """
   A unique identifier.
   """
@@ -11,6 +24,7 @@ type Coffee {
   name: String!
   brand: String!
   flavors: [Flavor!]
+  type: CoffeeType
   createdAt: Date
 }
 
@@ -28,18 +42,23 @@ input CreateCoffeeInput {
   """
   name: String!
   brand: String!
+  type: CoffeeType
   flavors: [String!]!
 }
 
 input UpdateCoffeeInput {
   name: String
   brand: String
+  type: CoffeeType
   flavors: [String!]
 }
+
+union DrinkResult = Coffee | Tea
 
 type Query {
   coffees: [Coffee!]!
   coffee(id: ID!): Coffee!
+  drinks: [DrinkResult!]!
 }
 
 type Mutation {
