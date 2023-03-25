@@ -8,7 +8,12 @@ type Coffee {
   id: ID!
   name: String!
   brand: String!
-  flavors: [String!]!
+  flavors: [Flavor!]
+}
+
+type Flavor {
+  id: ID!
+  name: String!
 }
 
 """

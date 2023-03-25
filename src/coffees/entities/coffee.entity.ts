@@ -1,5 +1,12 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import * as GraphQLTypes from 'src/graphql-types';
+import { Flavor } from './flavor.entity';
 
 @Entity()
 export class Coffee implements GraphQLTypes.Coffee {
@@ -12,6 +19,7 @@ export class Coffee implements GraphQLTypes.Coffee {
   @Column()
   brand: string;
 
-  @Column({ type: 'json' })
-  flavors: string[];
+  @JoinTable()
+  @ManyToMany(() => Flavor, (flavor) => flavor.coffees, { cascade: true })
+  flavors?: Flavor[];
 }
